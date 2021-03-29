@@ -2,7 +2,7 @@
 
 Python tools for processing and analyzing data for visual-inertial estimation applications.
 
-**More API explanation coming soon.**
+[API Documentation](https://goromal.github.io/pyvitools/)
 
 ## Dependencies
 
