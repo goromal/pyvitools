@@ -2,7 +2,15 @@
 
 Python tools for processing and analyzing data for visual-inertial estimation applications.
 
-[API Documentation](https://goromal.github.io/pyvitools/)
+Provides functions and classes for:
+
+- Algebraic anipulation of vectors and SO(3)/SE(3) objects.
+- Differentiating and integrating the above.
+- ROSbag processing.
+- Dataset manipulation and frame transformations.
+- (Coming soon) Plotting of all the above.
+
+**[API Documentation](https://goromal.github.io/pyvitools/)**
 
 ## Dependencies
 

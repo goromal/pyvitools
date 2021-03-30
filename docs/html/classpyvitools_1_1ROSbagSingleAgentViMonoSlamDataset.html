@@ -12,6 +12,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX","output/HTML-CSS"],
+});
+</script><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -58,7 +64,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>pyvitools</b></li><li class="navelem"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html">ROSbagSingleAgentViMonoSlamDataset</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacepyvitools.html">pyvitools</a></li><li class="navelem"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html">ROSbagSingleAgentViMonoSlamDataset</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -74,32 +80,29 @@ $(function() {
 Inheritance diagram for pyvitools.ROSbagSingleAgentViMonoSlamDataset:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset__inherit__graph.png" border="0" usemap="#pyvitools_8ROSbagSingleAgentViMonoSlamDataset_inherit__map" alt="Inheritance graph"/></div>
-<map name="pyvitools_8ROSbagSingleAgentViMonoSlamDataset_inherit__map" id="pyvitools_8ROSbagSingleAgentViMonoSlamDataset_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for pyvitools.ROSbagSingleAgentViMonoSlamDataset:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset__coll__graph.png" border="0" usemap="#pyvitools_8ROSbagSingleAgentViMonoSlamDataset_coll__map" alt="Collaboration graph"/></div>
-<map name="pyvitools_8ROSbagSingleAgentViMonoSlamDataset_coll__map" id="pyvitools_8ROSbagSingleAgentViMonoSlamDataset_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a08bfd452fd62d9d7e82c6e400e35fdc1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#a08bfd452fd62d9d7e82c6e400e35fdc1">__init__</a> (self, bagfile, truth_topic=None, image_topic=None, imu_topic=None, cam_info_topic=None)</td></tr>
+<tr class="memdesc:a08bfd452fd62d9d7e82c6e400e35fdc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates a single-agent, visual-inertial monocular SLAM dataset from bagfile.  <a href="#a08bfd452fd62d9d7e82c6e400e35fdc1">More...</a><br /></td></tr>
 <tr class="separator:a08bfd452fd62d9d7e82c6e400e35fdc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ba3d18eddd16345acc9c28723e0e6e3"><td class="memItemLeft" align="right" valign="top"><a id="a4ba3d18eddd16345acc9c28723e0e6e3"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>synthesizeImu</b> (self, g=np.array([[0, 0,-9.81]]).T, sigma_eta=(0, 0), kappa=(0, 0), sigma_beta=(0, 0))</td></tr>
+<tr class="memitem:a4ba3d18eddd16345acc9c28723e0e6e3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#a4ba3d18eddd16345acc9c28723e0e6e3">synthesizeImu</a> (self, g=np.array([[0, 0,-9.81]]).T, sigma_eta=(0, 0), kappa=(0, 0), sigma_beta=(0, 0))</td></tr>
+<tr class="memdesc:a4ba3d18eddd16345acc9c28723e0e6e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates fake IMU measurements using the dataset's true state fields.  <a href="#a4ba3d18eddd16345acc9c28723e0e6e3">More...</a><br /></td></tr>
 <tr class="separator:a4ba3d18eddd16345acc9c28723e0e6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96354c19e3023c05c1443f7b4dfaae92"><td class="memItemLeft" align="right" valign="top"><a id="a96354c19e3023c05c1443f7b4dfaae92"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>transformImuFrame</b> (self, T)</td></tr>
+<tr class="memitem:a96354c19e3023c05c1443f7b4dfaae92"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#a96354c19e3023c05c1443f7b4dfaae92">transformImuFrame</a> (self, T)</td></tr>
+<tr class="memdesc:a96354c19e3023c05c1443f7b4dfaae92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a rigid body transform to all IMU measurements, resulting in a transformed dataset.  <a href="#a96354c19e3023c05c1443f7b4dfaae92">More...</a><br /></td></tr>
 <tr class="separator:a96354c19e3023c05c1443f7b4dfaae92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0ed7d22505388ad2043a1721ba92377"><td class="memItemLeft" align="right" valign="top"><a id="ae0ed7d22505388ad2043a1721ba92377"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>transformTruthFrame</b> (self, T)</td></tr>
+<tr class="memitem:ae0ed7d22505388ad2043a1721ba92377"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#ae0ed7d22505388ad2043a1721ba92377">transformTruthFrame</a> (self, T)</td></tr>
+<tr class="memdesc:ae0ed7d22505388ad2043a1721ba92377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a rigid body transform to all truth state fields, resulting in a transformed dataset.  <a href="#ae0ed7d22505388ad2043a1721ba92377">More...</a><br /></td></tr>
 <tr class="separator:ae0ed7d22505388ad2043a1721ba92377"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eebaf1cd7d10734fa86c75b536526dc"><td class="memItemLeft" align="right" valign="top"><a id="a6eebaf1cd7d10734fa86c75b536526dc"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>writeBag</b> (self, bagfile, truth_topic='/truth', image_topic='/rgb', imu_topic='/imu', cam_info_topic='/rgb/info')</td></tr>
+<tr class="memitem:a6eebaf1cd7d10734fa86c75b536526dc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#a6eebaf1cd7d10734fa86c75b536526dc">writeBag</a> (self, bagfile, truth_topic='/truth', image_topic='/rgb', imu_topic='/imu', cam_info_topic='/rgb/info')</td></tr>
+<tr class="memdesc:a6eebaf1cd7d10734fa86c75b536526dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the current dataset contents to a new ROSbag file.  <a href="#a6eebaf1cd7d10734fa86c75b536526dc">More...</a><br /></td></tr>
 <tr class="separator:a6eebaf1cd7d10734fa86c75b536526dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -164,21 +167,218 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">ROSbagSingleAgentViMonoSlamDataset(bagfile, [truth_topic], [image_topic], [imu_topic], [cam_info_topic])
 
-Instantiates a dataset from bagfile, containing:
-- Truth state data
-- Camera image and info data
-- IMU data
+<p>Instantiates a single-agent, visual-inertial monocular SLAM dataset from bagfile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bagfile</td><td>The file path of the input ROSbag file. </td></tr>
+    <tr><td class="paramname">truth_topic</td><td>(Optional) Topic to take truth values from. If not specified, will look for topics with message type Odometry, Pose, PoseStamped, PoseWithCovariance, PoseWithCovarianceStamped, Transform, TransformStamped, Point, or PointStamped. </td></tr>
+    <tr><td class="paramname">image_topic</td><td>(Optional) Topic to take images from. If not specified, will look for topics with message type Image. </td></tr>
+    <tr><td class="paramname">imu_topic</td><td>(Optional) Topic to take IMU measurements from. If not specified, will look for topics with message type Imu. </td></tr>
+    <tr><td class="paramname">cam_info_topic</td><td>(Optional) Topic to take camera info from. If not specified, will look for topics with message type CameraInfo. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-The optional topic name specifications will tell the dataset which topics to poll for each data field.
-Else, it will search for a topic that has the appropriate message type.
-</pre> 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/andrew/Research/DOER/datasets/pyvitools/pyvitools.py</li>
-</ul>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4ba3d18eddd16345acc9c28723e0e6e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ba3d18eddd16345acc9c28723e0e6e3">&#9670;&nbsp;</a></span>synthesizeImu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pyvitools.ROSbagSingleAgentViMonoSlamDataset.synthesizeImu </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>g</em> = <code>np.array([[0,0,-9.81]]).T</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>sigma_eta</em> = <code>(0,0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>kappa</em> = <code>(0,0)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>sigma_beta</em> = <code>(0,0)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates fake IMU measurements using the dataset's true state fields. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td>The gravity vector, expressed in the world frame. A \(3\times 1\) numpy array. </td></tr>
+    <tr><td class="paramname">sigma_eta</td><td>A tuple of zero-mean noise standard deviations \((\sigma_{\eta,\text{accel}}, \sigma_{\eta,\text{gyro}})\). </td></tr>
+    <tr><td class="paramname">kappa</td><td>A tuple of bounds for the initial bias value \((\kappa_{\beta,\text{accel}}, \kappa_{\beta,\text{gyro}})\). </td></tr>
+    <tr><td class="paramname">sigma_beta</td><td>A tuple of random walk standard deviations \((\sigma_{\beta,\text{accel}}, \sigma_{\beta,\text{gyro}})\).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The default parameters generate noise- and bias-less measurements, assuming that the world z-axis points up. Implements the formulas derived at <a href="https://notes.andrewtorgesen.com/doku.php?id=public:imu#synthesizing_measurements">https://notes.andrewtorgesen.com/doku.php?id=public:imu#synthesizing_measurements</a>. </p>
+
+</div>
+</div>
+<a id="a96354c19e3023c05c1443f7b4dfaae92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96354c19e3023c05c1443f7b4dfaae92">&#9670;&nbsp;</a></span>transformImuFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pyvitools.ROSbagSingleAgentViMonoSlamDataset.transformImuFrame </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>T</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies a rigid body transform to all IMU measurements, resulting in a transformed dataset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>The transform SE(3) object, \(T_U^B\).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Assumes that you are trying to shift the IMU measurements from the vehicle body's center of mass ( \(B\)) to another frame still rigidly attached to the vehicle body ( \(U\)). Implements the formulas derived at <a href="https://notes.andrewtorgesen.com/doku.php?id=public:imu#shifting_measurements_in_se_3">https://notes.andrewtorgesen.com/doku.php?id=public:imu#shifting_measurements_in_se_3</a>. </p>
+
+</div>
+</div>
+<a id="ae0ed7d22505388ad2043a1721ba92377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0ed7d22505388ad2043a1721ba92377">&#9670;&nbsp;</a></span>transformTruthFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pyvitools.ROSbagSingleAgentViMonoSlamDataset.transformTruthFrame </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>T</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies a rigid body transform to all truth state fields, resulting in a transformed dataset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">T</td><td>The transform SE(3) object, \(T_U^B\).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Assumes that you are trying to shift the truth measurements from the vehicle body's center of mass ( \(B\)) to another frame still rigidly attached to the vehicle body ( \(U\)). </p>
+
+</div>
+</div>
+<a id="a6eebaf1cd7d10734fa86c75b536526dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eebaf1cd7d10734fa86c75b536526dc">&#9670;&nbsp;</a></span>writeBag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pyvitools.ROSbagSingleAgentViMonoSlamDataset.writeBag </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>bagfile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>truth_topic</em> = <code>'/truth'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>image_topic</em> = <code>'/rgb'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>imu_topic</em> = <code>'/imu'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cam_info_topic</em> = <code>'/rgb/info'</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write the current dataset contents to a new ROSbag file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bagfile</td><td>The path to the new bagfile. </td></tr>
+    <tr><td class="paramname">truth_topic</td><td>New topic name for the truth nav_msgs/Odometry field. </td></tr>
+    <tr><td class="paramname">image_topic</td><td>New topic name for the sensor_msgs/Image field. </td></tr>
+    <tr><td class="paramname">imu_topic</td><td>New topic name for the sensor_msgs/Imu field. </td></tr>
+    <tr><td class="paramname">cam_info_topic</td><td>New topic name for the sensor_msgs/CameraInfo field. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

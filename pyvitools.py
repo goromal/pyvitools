@@ -1,3 +1,15 @@
+## @package pyvitools
+#  Select tools written in Python for processing and analyzing data for visual-inertial estimation applications.
+#
+#  Provides tools for:
+#
+#   * Algebraic anipulation of vectors and SO(3)/SE(3) objects.
+#   * Differentiating and integrating the above.
+#   * ROSbag processing.
+#   * Dataset manipulation.
+#   * (Coming soon) Plotting of all the above.
+
+
 # Base packages
 import numpy as np
 import cv2
@@ -299,6 +311,9 @@ class SE3(object):
             raise TypeError('SE(3) multiplication is only valid with another SE(3) object.')
         return SE3.fromTranslationAndRotation(self.t + np.dot(self.q.R(), other.t), self.q * other.q)
 
+    ## \f$\oplus\f$
+    #
+    # More details.
     def __add__(self, other):
         if isinstance(other, np.ndarray) and other.shape == (6,1):
             return self * SE3.Exp(other)
@@ -634,22 +649,22 @@ class ROSbagStateDataset(ROSbagParserBase):
         return self.convPoint(msg.point)
 
 class ROSbagSingleAgentViMonoSlamDataset(object):
+    ## Instantiates a single-agent, visual-inertial monocular SLAM dataset from bagfile.
+    #  @param bagfile The file path of the input ROSbag file.
+    #  @param truth_topic (Optional) Topic to take truth values from. If not specified, will look for topics with message type Odometry, Pose, PoseStamped, PoseWithCovariance, PoseWithCovarianceStamped, Transform, TransformStamped, Point, or PointStamped.
+    #  @param image_topic (Optional) Topic to take images from. If not specified, will look for topics with message type Image.
+    #  @param imu_topic (Optional) Topic to take IMU measurements from. If not specified, will look for topics with message type Imu.
+    #  @param cam_info_topic (Optional) Topic to take camera info from. If not specified, will look for topics with message type CameraInfo. 
     def __init__(self, bagfile, truth_topic=None, image_topic=None, imu_topic=None, cam_info_topic=None):
-        '''
-        ROSbagSingleAgentViMonoSlamDataset(bagfile, [truth_topic], [image_topic], [imu_topic], [cam_info_topic])
-
-        Instantiates a dataset from bagfile, containing:
-        - Truth state data
-        - Camera image and info data
-        - IMU data
-
-        The optional topic name specifications will tell the dataset which topics to poll for each data field.
-        Else, it will search for a topic that has the appropriate message type.
-        '''
         self.truth  = ROSbagStateDataset(bagfile, truth_topic)
         self.camera = ROSbagCameraDataset(bagfile, image_topic, cam_info_topic)
         self.imu    = ROSbagImuDataset(bagfile, imu_topic)
 
+    ## Applies a rigid body transform to all truth state fields, resulting in a transformed dataset.
+    #  @param T The transform SE(3) object, \f$T_U^B\f$. 
+    #
+    #  Assumes that you are trying to shift the truth measurements from the vehicle body's center of
+    #  mass (\f$B\f$) to another frame still rigidly attached to the vehicle body (\f$U\f$). 
     def transformTruthFrame(self, T):
         q_U_B = T.q
         t_UB_B = T.t
@@ -664,6 +679,12 @@ class ROSbagSingleAgentViMonoSlamDataset(object):
             self.truth.vel_data[:,i:i+1] = np.dot(q_U_B.inverse().R(), v_BW_B + np.cross(w_BW_B, t_UB_B))
             self.truth.omg_data[:,i:i+1] = np.dot(q_U_B.inverse().R(), w_BW_B)
 
+    ## Applies a rigid body transform to all IMU measurements, resulting in a transformed dataset.
+    #  @param T The transform SE(3) object, \f$T_U^B\f$. 
+    #
+    #  Assumes that you are trying to shift the IMU measurements from the vehicle body's center of
+    #  mass (\f$B\f$) to another frame still rigidly attached to the vehicle body (\f$U\f$). 
+    #  Implements the formulas derived at https://notes.andrewtorgesen.com/doku.php?id=public:imu#shifting_measurements_in_se_3.
     def transformImuFrame(self, T):
         # https://notes.andrewtorgesen.com/doku.php?id=public:imu
         q_U_B = T.q
@@ -681,6 +702,14 @@ class ROSbagSingleAgentViMonoSlamDataset(object):
             self.imu.acc_data[:,i:i+1] = np.dot(q_U_B.inverse().R(), a + np.dot(O, t_UB_B))
             self.imu.gyr_data[:,i:i+1] = np.dot(q_U_B.inverse().R(), w)
 
+    ## Generates fake IMU measurements using the dataset's true state fields.
+    #  @param g The gravity vector, expressed in the world frame. A \f$3\times 1\f$ numpy array.
+    #  @param sigma_eta A tuple of zero-mean noise standard deviations \f$(\sigma_{\eta,\text{accel}}, \sigma_{\eta,\text{gyro}})\f$.
+    #  @param kappa A tuple of bounds for the initial bias value \f$(\kappa_{\beta,\text{accel}}, \kappa_{\beta,\text{gyro}})\f$.
+    #  @param sigma_beta A tuple of random walk standard deviations \f$(\sigma_{\beta,\text{accel}}, \sigma_{\beta,\text{gyro}})\f$.
+    #  
+    #  The default parameters generate noise- and bias-less measurements, assuming that the world z-axis points up.
+    #  Implements the formulas derived at https://notes.andrewtorgesen.com/doku.php?id=public:imu#synthesizing_measurements.
     def synthesizeImu(self, g=np.array([[0,0,-9.81]]).T, sigma_eta=(0,0), kappa=(0,0), sigma_beta=(0,0)):
         # g is 3x1 vector in W frame, default arg assumes that z_W points up
         # https://notes.andrewtorgesen.com/doku.php?id=public:imu
@@ -746,12 +775,23 @@ class ROSbagSingleAgentViMonoSlamDataset(object):
             self.imu.acc_data[:,i:i+1] = np.dot(q.inverse().R(), a_I.calculate(v, Ts) - g) + eta_a + beta_a
             self.imu.gyr_data[:,i:i+1] = w + eta_w + beta_w
 
+    ## Write the current dataset contents to a new ROSbag file.
+    #  @param bagfile The path to the new bagfile.
+    #  @param truth_topic New topic name for the truth nav_msgs/Odometry field.
+    #  @param image_topic New topic name for the sensor_msgs/Image field.
+    #  @param imu_topic New topic name for the sensor_msgs/Imu field.
+    #  @param cam_info_topic New topic name for the sensor_msgs/CameraInfo field.
     def writeBag(self, bagfile, truth_topic='/truth', image_topic='/rgb', imu_topic='/imu', cam_info_topic='/rgb/info'):
         self.truth.write(bagfile, topic_name=truth_topic)
         self.camera.write(bagfile, img_topic_name=image_topic, info_topic_name=cam_info_topic)
         self.imu.write(bagfile, topic_name=imu_topic)
 
-if __name__ == '__main__':
+def test_SO3():
     R1 = SO3.random()
+    print(R1)
     R2 = R1 + np.array([[0.5, 0.2, 0.1]]).T
+    print(R2)
     print(R2-R1)
+
+if __name__ == '__main__':
+    test_SO3()

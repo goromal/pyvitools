@@ -666,7 +666,7 @@ MAX_INITIALIZER_LINES  = 30
 # list will mention the files that were used to generate the documentation.
 # The default value is: YES.
 
-SHOW_USED_FILES        = YES
+SHOW_USED_FILES        = NO
 
 # Set the SHOW_FILES tag to NO to disable the generation of the Files page. This
 # will remove the Files entry from the Quick Index and from the Folder Tree View
@@ -982,7 +982,8 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE =
+INPUT += ../README.md
+USE_MDFILE_AS_MAINPAGE = ../README.md
 
 #---------------------------------------------------------------------------
 # Configuration options related to source browsing
@@ -1533,7 +1534,7 @@ FORMULA_TRANSPARENT    = YES
 # The default value is: NO.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-USE_MATHJAX            = NO
+USE_MATHJAX            = YES
 
 # When MathJax is enabled you can set the default output format to be used for
 # the MathJax output. See the MathJax site (see:
