@@ -1,9 +1,9 @@
 var indexSectionsWithContent =
 {
-  0: "_dprstw",
+  0: "_dpqrstw",
   1: "drs",
   2: "p",
-  3: "_stw",
+  3: "_dqrstw",
   4: "p"
 };
 

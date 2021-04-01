@@ -76,6 +76,9 @@ $(function() {
 <div class="title">pyvitools.ROSbagSingleAgentViMonoSlamDataset Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Dataset container for single-agent, visual-inertial, monocular SLAM.  
+ <a href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for pyvitools.ROSbagSingleAgentViMonoSlamDataset:</div>
 <div class="dyncontent">
@@ -90,17 +93,29 @@ Collaboration diagram for pyvitools.ROSbagSingleAgentViMonoSlamDataset:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a08bfd452fd62d9d7e82c6e400e35fdc1"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#a08bfd452fd62d9d7e82c6e400e35fdc1">__init__</a> (self, bagfile, truth_topic=None, image_topic=None, imu_topic=None, cam_info_topic=None)</td></tr>
-<tr class="memdesc:a08bfd452fd62d9d7e82c6e400e35fdc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates a single-agent, visual-inertial monocular SLAM dataset from bagfile.  <a href="#a08bfd452fd62d9d7e82c6e400e35fdc1">More...</a><br /></td></tr>
+<tr class="memdesc:a08bfd452fd62d9d7e82c6e400e35fdc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates the dataset from a ROSbag file.  <a href="#a08bfd452fd62d9d7e82c6e400e35fdc1">More...</a><br /></td></tr>
 <tr class="separator:a08bfd452fd62d9d7e82c6e400e35fdc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafc847795f377bc82664a61e1ad3964f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#aafc847795f377bc82664a61e1ad3964f">differentiateTruthPoses</a> (self)</td></tr>
+<tr class="memdesc:aafc847795f377bc82664a61e1ad3964f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Numerically differentiates the truth pose fields to obtain body-frame translational and anglar velocities.  <a href="#aafc847795f377bc82664a61e1ad3964f">More...</a><br /></td></tr>
+<tr class="separator:aafc847795f377bc82664a61e1ad3964f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a05e559213798cce025a206d606416e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#a6a05e559213798cce025a206d606416e">rotateVelocityTruthToBody</a> (self)</td></tr>
+<tr class="memdesc:a6a05e559213798cce025a206d606416e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms the velocity truth fields from the world frame to the body frame using the attitude truth fields.  <a href="#a6a05e559213798cce025a206d606416e">More...</a><br /></td></tr>
+<tr class="separator:a6a05e559213798cce025a206d606416e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81c481add4b82eeffd520e84bb983f05"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#a81c481add4b82eeffd520e84bb983f05">setCameraIntrinsics</a> (self, w, h, fu, fv, cu, cv, D=(0., 0., 0., 0., 0.))</td></tr>
+<tr class="memdesc:a81c481add4b82eeffd520e84bb983f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the monocular camera intrinsics.  <a href="#a81c481add4b82eeffd520e84bb983f05">More...</a><br /></td></tr>
+<tr class="separator:a81c481add4b82eeffd520e84bb983f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5930dd20df977e66c8fa9ca44c60159b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#a5930dd20df977e66c8fa9ca44c60159b">setTruthFields</a> (self, t, pos, att, vel, omg)</td></tr>
+<tr class="memdesc:a5930dd20df977e66c8fa9ca44c60159b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the truth state fields.  <a href="#a5930dd20df977e66c8fa9ca44c60159b">More...</a><br /></td></tr>
+<tr class="separator:a5930dd20df977e66c8fa9ca44c60159b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ba3d18eddd16345acc9c28723e0e6e3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#a4ba3d18eddd16345acc9c28723e0e6e3">synthesizeImu</a> (self, g=np.array([[0, 0,-9.81]]).T, sigma_eta=(0, 0), kappa=(0, 0), sigma_beta=(0, 0))</td></tr>
 <tr class="memdesc:a4ba3d18eddd16345acc9c28723e0e6e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates fake IMU measurements using the dataset's true state fields.  <a href="#a4ba3d18eddd16345acc9c28723e0e6e3">More...</a><br /></td></tr>
 <tr class="separator:a4ba3d18eddd16345acc9c28723e0e6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96354c19e3023c05c1443f7b4dfaae92"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#a96354c19e3023c05c1443f7b4dfaae92">transformImuFrame</a> (self, T)</td></tr>
 <tr class="memdesc:a96354c19e3023c05c1443f7b4dfaae92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a rigid body transform to all IMU measurements, resulting in a transformed dataset.  <a href="#a96354c19e3023c05c1443f7b4dfaae92">More...</a><br /></td></tr>
 <tr class="separator:a96354c19e3023c05c1443f7b4dfaae92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0ed7d22505388ad2043a1721ba92377"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#ae0ed7d22505388ad2043a1721ba92377">transformTruthFrame</a> (self, T)</td></tr>
-<tr class="memdesc:ae0ed7d22505388ad2043a1721ba92377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a rigid body transform to all truth state fields, resulting in a transformed dataset.  <a href="#ae0ed7d22505388ad2043a1721ba92377">More...</a><br /></td></tr>
-<tr class="separator:ae0ed7d22505388ad2043a1721ba92377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace0612060b2d980d58b4f41ebcd7df1c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#ace0612060b2d980d58b4f41ebcd7df1c">transformTruthFrame</a> (self, T_U_B, T_N_W=SE3.identity())</td></tr>
+<tr class="memdesc:ace0612060b2d980d58b4f41ebcd7df1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies a rigid body transform to all truth state fields, resulting in a transformed dataset.  <a href="#ace0612060b2d980d58b4f41ebcd7df1c">More...</a><br /></td></tr>
+<tr class="separator:ace0612060b2d980d58b4f41ebcd7df1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6eebaf1cd7d10734fa86c75b536526dc"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1ROSbagSingleAgentViMonoSlamDataset.html#a6eebaf1cd7d10734fa86c75b536526dc">writeBag</a> (self, bagfile, truth_topic='/truth', image_topic='/rgb', imu_topic='/imu', cam_info_topic='/rgb/info')</td></tr>
 <tr class="memdesc:a6eebaf1cd7d10734fa86c75b536526dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the current dataset contents to a new ROSbag file.  <a href="#a6eebaf1cd7d10734fa86c75b536526dc">More...</a><br /></td></tr>
 <tr class="separator:a6eebaf1cd7d10734fa86c75b536526dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,7 +132,9 @@ Public Attributes</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>truth</b></td></tr>
 <tr class="separator:a3144d3435306af55b5534365c995d160"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Dataset container for single-agent, visual-inertial, monocular SLAM. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a08bfd452fd62d9d7e82c6e400e35fdc1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a08bfd452fd62d9d7e82c6e400e35fdc1">&#9670;&nbsp;</a></span>__init__()</h2>
 
@@ -168,7 +185,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Instantiates a single-agent, visual-inertial monocular SLAM dataset from bagfile. </p>
+<p>Instantiates the dataset from a ROSbag file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bagfile</td><td>The file path of the input ROSbag file. </td></tr>
@@ -183,6 +200,190 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aafc847795f377bc82664a61e1ad3964f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafc847795f377bc82664a61e1ad3964f">&#9670;&nbsp;</a></span>differentiateTruthPoses()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pyvitools.ROSbagSingleAgentViMonoSlamDataset.differentiateTruthPoses </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Numerically differentiates the truth pose fields to obtain body-frame translational and anglar velocities. </p>
+<p>Assumes that position is expressed in the world frame \(p_{B/W}^W\) and that attitude represents \(R_B^W\) and is of the form \(\begin{bmatrix}q_w &amp; q_x &amp; q_y &amp; q_z\end{bmatrix}^{\top}\). </p>
+
+</div>
+</div>
+<a id="a6a05e559213798cce025a206d606416e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a05e559213798cce025a206d606416e">&#9670;&nbsp;</a></span>rotateVelocityTruthToBody()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pyvitools.ROSbagSingleAgentViMonoSlamDataset.rotateVelocityTruthToBody </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transforms the velocity truth fields from the world frame to the body frame using the attitude truth fields. </p>
+<p>Assumes that the attitude truth fields represent \(R_B^W\) and are of the form \(\begin{bmatrix}q_w &amp; q_x &amp; q_y &amp; q_z\end{bmatrix}^{\top}\). </p>
+
+</div>
+</div>
+<a id="a81c481add4b82eeffd520e84bb983f05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81c481add4b82eeffd520e84bb983f05">&#9670;&nbsp;</a></span>setCameraIntrinsics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pyvitools.ROSbagSingleAgentViMonoSlamDataset.setCameraIntrinsics </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>fu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>fv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>cv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>D</em> = <code>(0.,0.,0.,0.,0.)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the monocular camera intrinsics. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">w</td><td>Image width. </td></tr>
+    <tr><td class="paramname">h</td><td>Image height. </td></tr>
+    <tr><td class="paramname">fu</td><td>Focal length in x. </td></tr>
+    <tr><td class="paramname">fv</td><td>Focal length in y. </td></tr>
+    <tr><td class="paramname">cu</td><td>Center pixel in x. </td></tr>
+    <tr><td class="paramname">cv</td><td>Center pixel in y. </td></tr>
+    <tr><td class="paramname">D</td><td>List of radial-tangential distortion parameters (k1, k2, t1, t2, k3) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5930dd20df977e66c8fa9ca44c60159b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5930dd20df977e66c8fa9ca44c60159b">&#9670;&nbsp;</a></span>setTruthFields()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pyvitools.ROSbagSingleAgentViMonoSlamDataset.setTruthFields </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>att</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>vel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>omg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the truth state fields. </p>
+<p>All input lists should be synchronized and of the same length, else set to None. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>List of time values. </td></tr>
+    <tr><td class="paramname">pos</td><td>List of \(3\times 1\) numpy array world-frame position vectors \(p_{B/W}^W\). </td></tr>
+    <tr><td class="paramname">att</td><td>List of \(4\times 1\) numpy array quaternion vectors representing \(R_B^W\) and of the form \(\begin{bmatrix}q_w &amp; q_x &amp; q_y &amp; q_z\end{bmatrix}^{\top}\). </td></tr>
+    <tr><td class="paramname">vel</td><td>List of \(3\times 1\) numpy array body-frame velocity vectors \(v_{B/W}^B\). </td></tr>
+    <tr><td class="paramname">omg</td><td>List of \(3\times 1\) numpy array body-frame angular velocity vectors \(\omega_{B/W}^B\). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a4ba3d18eddd16345acc9c28723e0e6e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4ba3d18eddd16345acc9c28723e0e6e3">&#9670;&nbsp;</a></span>synthesizeImu()</h2>
 
@@ -270,7 +471,7 @@ Public Attributes</h2></td></tr>
 <p>Applies a rigid body transform to all IMU measurements, resulting in a transformed dataset. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The transform SE(3) object, \(T_U^B\).</td></tr>
+    <tr><td class="paramname">T</td><td>The transform <a class="el" href="classpyvitools_1_1SE3.html">SE3</a> object, \(T_U^B\).</td></tr>
   </table>
   </dd>
 </dl>
@@ -278,8 +479,8 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ae0ed7d22505388ad2043a1721ba92377"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0ed7d22505388ad2043a1721ba92377">&#9670;&nbsp;</a></span>transformTruthFrame()</h2>
+<a id="ace0612060b2d980d58b4f41ebcd7df1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace0612060b2d980d58b4f41ebcd7df1c">&#9670;&nbsp;</a></span>transformTruthFrame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -294,7 +495,13 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>T</em>&#160;</td>
+          <td class="paramname"><em>T_U_B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>T_N_W</em> = <code>SE3.identity()</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -307,11 +514,12 @@ Public Attributes</h2></td></tr>
 <p>Applies a rigid body transform to all truth state fields, resulting in a transformed dataset. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">T</td><td>The transform SE(3) object, \(T_U^B\).</td></tr>
+    <tr><td class="paramname">T_U_B</td><td>The transform <a class="el" href="classpyvitools_1_1SE3.html">SE3</a> object, \(T_U^B\). </td></tr>
+    <tr><td class="paramname">T_N_W</td><td>The transform <a class="el" href="classpyvitools_1_1SE3.html">SE3</a> object, \(T_N^W\).</td></tr>
   </table>
   </dd>
 </dl>
-<p>Assumes that you are trying to shift the truth measurements from the vehicle body's center of mass ( \(B\)) to another frame still rigidly attached to the vehicle body ( \(U\)). </p>
+<p>Assumes that you are trying to shift the truth measurements from the vehicle body's center of mass ( \(B\)) to another frame still rigidly attached to the vehicle body ( \(U\)). The second argument allows you to simultaneously modify the world frame from \(W\rightarrow N\), which again assumes that frame \(N\) is rigidly attached to frame \(W\). </p>
 
 </div>
 </div>

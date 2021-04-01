@@ -16,6 +16,8 @@ Provides functions and classes for:
 
 - [numpy](https://numpy.org/)
 - [opencv-python](https://pypi.org/project/opencv-python/)
+- [open3d](http://www.open3d.org/docs/release/getting_started.html) (*optional*--for pointcloud visualization)
+  - If using Python2.7, will have to compile from source. See link.
 - ROS (*optional*--see below)
 
 If you want the ROS-related functionality without installing ROS (e.g., if your OS isn't Linux), try utilizing this [standalone fork of select ROS python libraries](https://github.com/rospypi/simple):
