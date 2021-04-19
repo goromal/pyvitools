@@ -81,6 +81,9 @@ $(function() {
 <h2>Dependencies</h2>
 <ul>
 <li><a href="https://numpy.org/">numpy</a></li>
+<li><a href="https://www.scipy.org/">scipy</a></li>
+<li><a href="https://matplotlib.org/">matplotlib</a></li>
+<li><a href="https://pypi.org/project/Shapely/">shapely</a></li>
 <li><a href="https://pypi.org/project/opencv-python/">opencv-python</a></li>
 <li><a href="http://www.open3d.org/docs/release/getting_started.html">open3d</a> (<em>optional</em>&ndash;for pointcloud visualization)<ul>
 <li>If using Python2.7, will have to compile from source. See link.</li>
@@ -89,7 +92,7 @@ $(function() {
 <li>ROS (<em>optional</em>&ndash;see below)</li>
 </ul>
 <p>If you want the ROS-related functionality without installing ROS (e.g., if your OS isn't Linux), try utilizing this <a href="https://github.com/rospypi/simple">standalone fork of select ROS python libraries</a>:</p>
-<div class="fragment"><div class="line">pip install --extra-index-url https://rospypi.github.io/simple/ rospy std-msgs geometry-msgs sensor-msgs nav-msgs cv-bridge rosbag roslz4</div></div><!-- fragment --><p>Another possible option found <a href="https://discourse.ros.org/t/experimental-python-package-index-for-ros/10366/2">here</a>. </p>
+<div class="fragment"><div class="line">pip install --extra-index-url https://rospypi.github.io/simple/ rospy std-msgs geometry-msgs sensor-msgs nav-msgs cv-bridge rosbag roslz4 actionlib-msgs</div></div><!-- fragment --><p>Another possible option found <a href="https://discourse.ros.org/t/experimental-python-package-index-for-ros/10366/2">here</a>. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

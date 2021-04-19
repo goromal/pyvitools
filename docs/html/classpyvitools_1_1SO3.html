@@ -81,11 +81,15 @@ $(function() {
 Inheritance diagram for pyvitools.SO3:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpyvitools_1_1SO3__inherit__graph.png" border="0" usemap="#pyvitools_8SO3_inherit__map" alt="Inheritance graph"/></div>
+<map name="pyvitools_8SO3_inherit__map" id="pyvitools_8SO3_inherit__map">
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for pyvitools.SO3:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpyvitools_1_1SO3__coll__graph.png" border="0" usemap="#pyvitools_8SO3_coll__map" alt="Collaboration graph"/></div>
+<map name="pyvitools_8SO3_coll__map" id="pyvitools_8SO3_coll__map">
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -114,6 +118,9 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>q</b> (self)</td></tr>
 <tr class="memitem:af192d65c61b324b17cb0cef056c04583"><td class="memItemLeft" align="right" valign="top"><a id="af192d65c61b324b17cb0cef056c04583"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>R</b> (self)</td></tr>
 <tr class="separator:af192d65c61b324b17cb0cef056c04583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d66e687351f8902e88539c5fbe6063"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpyvitools_1_1SO3.html#af3d66e687351f8902e88539c5fbe6063">toEuler</a> (self)</td></tr>
+<tr class="memdesc:af3d66e687351f8902e88539c5fbe6063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert <a class="el" href="classpyvitools_1_1SO3.html">SO3</a> to Euler representation (roll, pitch, yaw).  <a href="#af3d66e687351f8902e88539c5fbe6063">More...</a><br /></td></tr>
+<tr class="separator:af3d66e687351f8902e88539c5fbe6063"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1320d3b7f9345555914de264b0b34a1"><td class="memItemLeft" align="right" valign="top"><a id="af1320d3b7f9345555914de264b0b34a1"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>toQuaternionMsg</b> (self)</td></tr>
 <tr class="separator:af1320d3b7f9345555914de264b0b34a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,6 +142,9 @@ def&#160;</td><td class="memItemRight" valign="bottom"><b>fromQuaternionMsg</b> 
 <tr class="memitem:a8812059bfd037e49d3d569b79097c8ae"><td class="memItemLeft" align="right" valign="top"><a id="a8812059bfd037e49d3d569b79097c8ae"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>fromRotationMatrix</b> (R)</td></tr>
 <tr class="separator:a8812059bfd037e49d3d569b79097c8ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2995b8abd6c9685d15fc034d0a8a390f"><td class="memItemLeft" align="right" valign="top"><a id="a2995b8abd6c9685d15fc034d0a8a390f"></a>
+def&#160;</td><td class="memItemRight" valign="bottom"><b>fromTwoUnitVectors</b> (u, v)</td></tr>
+<tr class="separator:a2995b8abd6c9685d15fc034d0a8a390f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6d638353702c81b1acde7c0ae55980b"><td class="memItemLeft" align="right" valign="top"><a id="ad6d638353702c81b1acde7c0ae55980b"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>hat</b> (o)</td></tr>
 <tr class="separator:ad6d638353702c81b1acde7c0ae55980b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,6 +170,28 @@ Public Attributes</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>arr</b></td></tr>
 <tr class="separator:adb0d392754e9d0484ecbfcc1becb8568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af3d66e687351f8902e88539c5fbe6063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3d66e687351f8902e88539c5fbe6063">&#9670;&nbsp;</a></span>toEuler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def pyvitools.SO3.toEuler </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert <a class="el" href="classpyvitools_1_1SO3.html">SO3</a> to Euler representation (roll, pitch, yaw). </p>
+<p>Uses the flight dynamics convention: roll about x -&gt; pitch about y -&gt; yaw about z (<a href="http://graphics.wikia.com/wiki/Conversion_between_quaternions_and_Euler_angles">http://graphics.wikia.com/wiki/Conversion_between_quaternions_and_Euler_angles</a>) </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
