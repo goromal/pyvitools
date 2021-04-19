@@ -18,7 +18,7 @@ Provides functions and classes for:
 - [scipy](https://www.scipy.org/)
 - [matplotlib](https://matplotlib.org/)
 - [shapely](https://pypi.org/project/Shapely/)
-- [opencv-python](https://pypi.org/project/opencv-python/)
+- [opencv-python](https://pypi.org/project/opencv-python/) (*optional*--for image operations)
 - [open3d](http://www.open3d.org/docs/release/getting_started.html) (*optional*--for pointcloud visualization)
   - If using Python2.7, will have to compile from source. See link.
 - ROS (*optional*--see below)

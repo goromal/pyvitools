@@ -12,13 +12,20 @@
 
 # Base packages
 import numpy as np
-import cv2
 import csv
 from math import sqrt, atan2, cos, sin, pi, asin
 import matplotlib.pyplot as plt
 import scipy.stats as stats
 from itertools import product
 from shapely.geometry import MultiPoint
+
+# Import opencv if available
+try:
+    import cv2
+    __CV = True
+except ImportError:
+    print('NO OPENCV')
+    __CV = False
 
 # Import point cloud visualization if available
 try:
